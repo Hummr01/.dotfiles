@@ -3,5 +3,7 @@
 	name = Hummr
 [core]
 	editor = vim
+[help]
+	autocorrect = 20
 [commit]
-	template = .config/git/.gitmessage
+	template = /home/daniel/.dotfiles/git/.gitmessage
