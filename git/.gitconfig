@@ -6,4 +6,4 @@
 [help]
 	autocorrect = 20
 [commit]
-	template = /home/daniel/.dotfiles/git/.gitmessage
+	template = /home/daniel/git/.gitmessage
