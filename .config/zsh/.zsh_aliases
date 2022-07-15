@@ -12,3 +12,6 @@ alias cc="config commit"
 
 #Config status
 alias cs="config status"
+
+#Config push
+alias cop="config push"
