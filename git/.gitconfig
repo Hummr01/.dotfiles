@@ -2,7 +2,7 @@
 	email = 55256711+Hummr01@users.noreply.github.com
 	name = Hummr
 [core]
-	editor = vim
+	editor = nvim
 [help]
 	autocorrect = 20
 [commit]
