@@ -81,6 +81,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
+    Key([mod], "b", lazy.spawn("chromium"), desc="Spawn browser"),
 ]
 
 groups = [Group(i) for i in "123456789"]
