@@ -84,29 +84,30 @@ keys = [
     Key([mod], "b", lazy.spawn("chromium"), desc="Spawn browser"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in ["","","3","4","5","6","7","",""]]
+group_hotkeys = "123456789"
 
-for i in groups:
+for g, k in zip(groups, group_hotkeys):
     keys.extend(
         [
             # mod1 + letter of group = switch to group
             Key(
                 [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
+                k,      
+                lazy.group[g.name].toscreen(),
+                desc="Switch to group {}".format(g.name),
             ),
             # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
+           # Key(
+           #     [mod, "shift"],
+           #     k,
+           #     lazy.window.togroup(g.name, switch_group=False),
+           #     desc="Switch to & move focused window to group {}".format(i.name),
+           # ),
             # Or, use below if you prefer not to switch to that group.
             # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+             Key([mod, "shift"], k, lazy.window.togroup(g.name),
+                 desc="move focused window to group {}".format(g.name)),
         ]
     )
 
@@ -116,8 +117,8 @@ layouts = [
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
+     layout.Matrix(),
+     layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -138,7 +139,7 @@ screens = [
        top = bar.Bar(
             [
                 widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.GroupBox(fontsize = 15),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
