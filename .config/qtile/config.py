@@ -147,7 +147,6 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(),
                 widget.Battery( format="{char}{percent:2.0%}"),
                 widget.PulseVolume(volume_app="pavucontrol"),
                 widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
