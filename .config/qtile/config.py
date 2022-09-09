@@ -147,13 +147,15 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Battery( format="{char}{percent:2.0%}"),
+                widget.Net(format="{down}↓↑{up}"),
+                widget.Battery(full_char="", format="{char}{percent:2.0%}"),
                 widget.PulseVolume(volume_app="pavucontrol"),
-                widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+                widget.Clock(format="%A %d.%B | %H:%M"),
             ],
             24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            opacity=0.9
+             #border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+             #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     ),
 ]
