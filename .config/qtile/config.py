@@ -47,8 +47,7 @@ keys = [
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
+    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"), Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
@@ -83,6 +82,10 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
     Key([mod], "b", lazy.spawn("chromium"), desc="Spawn browser"),
     Key([], "Print", lazy.spawn("flameshot gui"), desc="Spawn flameshot gui"),
+    Key([], "XF86AudioMute", lazy.spawn("amixer -q sset Master toggle"), desc="Mute desktop sound"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 2%+"), desc="Raise volume"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 2%-"), desc="Lower volume"),
+
 ]
 
 groups = [Group(i) for i in ["","","3","4","5","6","ﭮ","",""]]
@@ -148,14 +151,14 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Net(format="{down}↓↑{up}"),
-                widget.Battery(full_char="", format="{char}{percent:2.0%}"),
-                widget.PulseVolume(volume_app="pavucontrol"),
-                widget.Clock(format="%A %d.%B | %H:%M"),
+                widget.Battery(hide_threshold=0.3, known_char="", full_char="", format="{char}{percent:2.0%}"),
+                widget.PulseVolume(emoji= True,update_interval=0.1, volume_app="pavucontrol"),
+                widget.CheckUpdates(distro="Arch", custom_command="yay -Qu"),
+                widget.Clock(format="%A %d.%B %Y | %H:%M"),
             ],
             24,
-            opacity=0.9
-             #border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-             #border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     ),
 ]
