@@ -84,7 +84,7 @@ keys = [
     Key([mod], "b", lazy.spawn("chromium"), desc="Spawn browser"),
 ]
 
-groups = [Group(i) for i in ["","","3","4","5","6","7","",""]]
+groups = [Group(i) for i in ["","","3","4","5","6","ﭮ","",""]]
 group_hotkeys = "123456789"
 
 for g, k in zip(groups, group_hotkeys):
@@ -138,7 +138,6 @@ screens = [
     Screen(
        top = bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(fontsize = 15),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -149,7 +148,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.Battery(full_char = "",empty_char = "", format="{percent:2.0%}"),
+                widget.Battery( format="{char}{percent:2.0%}"),
                 widget.PulseVolume(volume_app="pavucontrol"),
                 widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
             ],
