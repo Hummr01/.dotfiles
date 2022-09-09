@@ -139,7 +139,6 @@ screens = [
        top = bar.Bar(
             [
                 widget.GroupBox(fontsize = 15),
-                widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
