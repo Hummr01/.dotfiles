@@ -150,6 +150,7 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+                widget.Systray(icon_size=15),
                 widget.Net(format="{down}↓↑{up}"),
                 widget.Battery(hide_threshold=0.3, known_char="", full_char="", format="{char}{percent:2.0%}"),
                 widget.PulseVolume(emoji= True,update_interval=0.1, volume_app="pavucontrol"),
