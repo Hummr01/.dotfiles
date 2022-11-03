@@ -85,7 +85,6 @@ keys = [
     Key([], "XF86AudioMute", lazy.spawn("amixer -q sset Master toggle"), desc="Mute desktop sound"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 2%+"), desc="Raise volume"),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 2%-"), desc="Lower volume"),
-
 ]
 
 groups = [Group(i) for i in ["","","3","4","5","6","ﭮ","",""]]
@@ -154,7 +153,7 @@ screens = [
                 widget.Net(format="{down}↓↑{up}"),
                 widget.Battery(hide_threshold=0.3, known_char="", full_char="", format="{char}{percent:2.0%}"),
                 widget.PulseVolume(emoji= True,update_interval=0.1, volume_app="pavucontrol"),
-                widget.CheckUpdates(distro="Arch", custom_command="yay -Qu"),
+                widget.CheckUpdates(distro="Arch_yay"),
                 widget.Clock(format="%A %d.%B %Y | %H:%M"),
             ],
             24,
