@@ -1,0 +1,63 @@
+(defwindow bar
+           :exclusive true
+           :monitor 0
+           :windowtype "dock"
+           :stacking "bg"
+                :focusable false
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "100%"
+                               :height "30px"
+                               :anchor "top center")
+           :reserve (struts :side "top" :distance "4%")
+           (left)
+           (window_w)
+)
+
+(defwidget left []
+	(box :orientation "h" 
+		 :space-evenly false  
+       :halign "start"
+			 :valign "center"
+		 :class "left_modules"
+(workspaces)
+))
+
+(deflisten workspaces :initial "[]" "zsh ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "zsh ~/.config/eww/scripts/get-active-workspace")
+
+(defwidget workspaces []
+    (box :space-evenly true
+        (for workspace in workspaces
+            (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+              (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+                    (label :text "${workspace.id}")
+                )
+            )
+            (for workspace in workspaces
+                (label: text 
+            )
+        )   
+    )
+)
+
+
+(deflisten window :initial "..." "zsh ~/.config/eww/scripts/get-window-title")
+(defwidget window_w []
+  (box
+    (label :text "${window}"
+    )
+  )
+{
+        "1": "一",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",        
+        "0": "十"
+        }
+
