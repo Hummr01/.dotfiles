@@ -3,8 +3,13 @@
 }
 
 //Global Styles
-.workspace-entry.current{
-    background: grey;
+.workspace-entry{
+    padding: 5px;
+    &.occupied {
+        background: lightblue;
+    }
+    &.current{
+    		background: grey;
+	}
 }
-
 
