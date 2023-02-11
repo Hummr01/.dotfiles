@@ -17,4 +17,4 @@ alias cs="config status"
 alias cop="config push"
 
 #Nvim alias
-alias vim="nvim"
+alias sudo vim="sudo nvim"
