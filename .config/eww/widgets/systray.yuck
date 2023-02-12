@@ -1,0 +1,9 @@
+(include "widgets/bar.yuck")
+(defwidget right []
+    (box :orientation "h"
+         :space-evently false
+         :halign "end"
+         :valign "center"
+         :class "right_modules"
+    (workspace)        
+))

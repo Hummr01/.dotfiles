@@ -1,3 +1,4 @@
+@import  "gruvbox.scss";
 * {
   all: unset; //Unsets everything so you can style everything from scratch
 }
@@ -6,10 +7,13 @@
 .workspace-entry{
     padding: 5px;
     &.occupied {
-        background: lightblue;
+        background: $lightgray;
     }
     &.current{
-    		background: grey;
+    		background: $gray;
 	}
 }
 
+.right_modules{
+  background: blueviolet;
+}
