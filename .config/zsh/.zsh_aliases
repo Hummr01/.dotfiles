@@ -1,5 +1,5 @@
 alias vim="nvim"
-alias vi="vim"
+alias vi="nvim"
 
 #Config alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -16,5 +16,3 @@ alias cs="config status"
 #Config push
 alias cop="config push"
 
-#Nvim alias
-alias sudo vim="sudo nvim"
