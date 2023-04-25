@@ -1,4 +1,6 @@
 README.md
 .vim/backup/
 __pycache__
-&HOME/.config/zsh/.zcompdump
+.config/zsh/.zcompdump
+
+

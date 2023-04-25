@@ -43,7 +43,9 @@
     (box :space-evenly true
         (for workspace in workspaces
             (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
-              (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+              (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}
+                                           ${workspace.windows > 0 ? "occupied visible" : "empty"}
+                                           ${workspace.id > 5 ? "" : "visible"}"
                     (label :text "${workspace_symbols[workspace.id]}")
               )
             )
