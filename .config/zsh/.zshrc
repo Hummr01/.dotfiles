@@ -15,7 +15,6 @@ SAVEHIST=1000
 setopt extendedglob
 unsetopt beep notify
 bindkey -e
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
@@ -24,4 +23,6 @@ source "$ZDOTDIR/.zsh_aliases"
 # Load Plugins
 source $ZPLUGINS/zsh-autosuggestions.zsh
 source $ZPLUGINS/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+export PATH=$PATH:$HOME/.local/bin
