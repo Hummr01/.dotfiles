@@ -2,7 +2,7 @@ alias vim="nvim"
 alias vi="nvim"
 
 #Config alias
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
 
 #Config add
 alias ca="config add"
