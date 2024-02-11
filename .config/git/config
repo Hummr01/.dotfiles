@@ -7,3 +7,4 @@
 	autocorrect = 20
 [commit]
 	template = ~/.config/git/gitmessage
+	gpsign = true
