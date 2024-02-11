@@ -6,4 +6,4 @@
 [help]
 	autocorrect = 20
 [commit]
-	template = ~/git/gitmessage
+	template = ~/.config/git/gitmessage
