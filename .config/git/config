@@ -1,6 +1,7 @@
 [user]
 	email = 55256711+Hummr01@users.noreply.github.com
 	name = Hummr
+	signingkey = daniellaber@hummr.me
 [core]
 	editor = nvim
 [help]
