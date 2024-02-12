@@ -1,7 +1,7 @@
 [user]
 	email = 55256711+Hummr01@users.noreply.github.com
 	name = Hummr
-	signingkey = daniellaber@hummr.me
+	signingkey = /home/hummr/.ssh/id_ed25519.pub
 [core]
 	editor = nvim
 [help]
@@ -9,3 +9,5 @@
 [commit]
 	template = ~/.config/git/gitmessage
 	gpsign = true
+[gpg]
+	format = ssh
