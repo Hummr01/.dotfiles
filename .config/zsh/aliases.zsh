@@ -7,8 +7,8 @@ alias fedit="$EDITOR $ZSH_CONFIG/functions.zsh; source $ZSH_CONFIG/functions.zsh
 alias pedit=" $EDITOR $ZSH_CONFIG/private.zsh; source $ZSH_CONFIG/private.zsh"
 alias viedit=" $EDITOR $HOME/.vim/vimrc"
 
-alias  l='eza -lh  --icons=auto' # long list
-alias ls='eza -2   --icons=auto' # short list
+alias  l='eza -lh --icons=auto' # long list
+alias ls='eza --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias un='$aurhelper -Rns' # uninstall package
@@ -33,5 +33,8 @@ alias mkdir='mkdir -p'
 # Fixes "Error opening terminal: xterm-kitty" when using the default kitty term to open some programs through ssh
 alias ssh='kitten ssh'
 
-
+# Git aliases
+alias gb='git branch'
+alias gc='git commit'
+alias ga='git add'
 
