@@ -1,7 +1,7 @@
 [user]
-	email = 55256711+Hummr01@users.noreply.github.com
+	email = daniellaber@hummr.me
 	name = Hummr
-	signingkey = /home/hummr/.ssh/id_ed25519.pub
+	signingkey = /home/hummr/.ssh/id_ed25519
 [core]
 	editor = nvim
 [help]
