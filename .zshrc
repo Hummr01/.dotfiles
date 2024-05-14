@@ -55,4 +55,8 @@ source "$ZSH_CONFIG/aliases.zsh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Display Pokemon
+GPG_TTY=$(tty)
+export GPG_TTY
+export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye > /dev/null
 #pokemon-colorscripts --no-title -r 1,3,6
