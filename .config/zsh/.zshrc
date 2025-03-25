@@ -9,7 +9,7 @@ source "$ZSH_CONFIG/environment.zsh"
 source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/keybinds.zsh"
 
-source "/usr/share/zsh-antidote/antidote.zsh"
+source "$ZSH_CONFIG/zsh-antidote/antidote.zsh"
 antidote load
 
 eval "$(starship init zsh)"
