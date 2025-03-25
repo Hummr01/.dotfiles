@@ -1,24 +1,20 @@
 export EDITOR="nvim"
-
 alias vi="nvim"
 alias vim="nvim"
 alias aedit="$EDITOR $ZSH_CONFIG/aliases.zsh; source $ZSH_CONFIG/aliases.zsh"
 alias fedit="$EDITOR $ZSH_CONFIG/functions.zsh; source $ZSH_CONFIG/functions.zsh"
 alias pedit=" $EDITOR $ZSH_CONFIG/private.zsh; source $ZSH_CONFIG/private.zsh"
-alias viedit=" $EDITOR $HOME/.vim/vimrc"
 
-alias  l='eza -lh --icons=auto' # long list
-alias ls='eza --icons=auto' # short list
-alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
-alias ld='eza -lhD --icons=auto' # long list dirs
-alias un='$aurhelper -Rns' # uninstall package
-alias up='$aurhelper -Syu' # update system/package/aur
-alias pl='$aurhelper -Qs' # list installed package
-alias pa='$aurhelper -Ss' # list availabe package
-alias pc='$aurhelper -Sc' # remove unused cache
-alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias vc='code --disable-gpu' # gui code editor
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias aedit="$EDITOR $ZSH_CONFIG/aliases.zsh; source $ZDOTDIR/aliases.zsh"
+alias fedit="$EDITOR $ZSH_CONFIG/functions.zsh; source $ZDOTDIR//functions.zsh"
+alias pedit=" $EDITOR $ZSH_CONFIG/private.zsh; source $ZDOTDIR/private.zsh"
+alias zedit=" $EDITOR $ZSH_CONFIG/.zshrc; source $ZDOTDIR/.zshrc"
+alias viedit=" $EDITOR $HOME/.vim/vimrc"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -38,3 +34,5 @@ alias gb='git branch'
 alias gc='git commit'
 alias ga='git add'
 
+#Connect vpn
+alias vpn="$HOME/Scripts/vpn-connect.sh"
