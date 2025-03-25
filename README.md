@@ -1,5 +1,5 @@
 # My Dotfiles
-Thank you [https://github.com/dreamsofautonomy] for delivering good way to backup my DotFiles
+Thank you https://github.com/dreamsofautonomy for delivering good way to backup my DotFiles
 
 ## Requirements
 Ensure you have the following installed on your system
