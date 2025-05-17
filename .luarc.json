@@ -1,0 +1,6 @@
+{
+    "diagnostics.globals": [
+        "config"
+    ],
+    "completion.autoRequire": false
+}

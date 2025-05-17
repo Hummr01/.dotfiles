@@ -8,6 +8,7 @@ return {
 		{ "williamboman/mason.nvim", opts = {} },
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		{ "saghen/blink.cmp" },
 		{
 			-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
 			-- used for completion, annotations and signatures of Neovim apis
@@ -23,9 +24,6 @@ return {
 
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
-
-		-- Allows extra capabilities provided by nvim-cmp
-		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		--  This function gets run when an LSP attaches to a particular buffer.
@@ -170,10 +168,7 @@ return {
 		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
 		require("lspconfig").gdscript.setup(capabilities)
-
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 		--
@@ -187,6 +182,11 @@ return {
 			clangd = {},
 			pyright = {},
 			jdtls = {},
+			html = {
+				filetype = {
+					"ejs",
+				},
+			},
 			-- This starts a new client & server,
 			-- or attaches to an existing client & server depending on the `root_dir`.
 			lua_ls = {
