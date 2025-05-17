@@ -5,7 +5,6 @@ SAVEHIST=10000
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 typeset -ga sources
-source "$ZSH_CONFIG/environment.zsh"
 source "$ZSH_CONFIG/aliases.zsh"
 source "$ZSH_CONFIG/keybinds.zsh"
 
