@@ -21,6 +21,7 @@ return {
 				},
 			},
 		},
+		{ "norcalli/nvim-colorizer.lua" },
 
 		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -222,6 +223,7 @@ return {
 					-- certain features of an LSP (for example, turning off formatting for ts_ls)
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
+					require("colorizer").setup()
 				end,
 			},
 		})
