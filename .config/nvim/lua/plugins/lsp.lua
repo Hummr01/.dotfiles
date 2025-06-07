@@ -9,6 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		{ "saghen/blink.cmp" },
+		{ "mfussenegger/nvim-jdtls" },
 		{
 			-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
 			-- used for completion, annotations and signatures of Neovim apis
@@ -182,7 +183,6 @@ return {
 		local servers = {
 			clangd = {},
 			pyright = {},
-			jdtls = {},
 			html = {
 				filetype = {
 					"ejs",
@@ -204,11 +204,89 @@ return {
 					},
 				},
 			},
+			-- JDTLS configuration for Eclipse projects
+			jdtls = {
+				-- The `cmd` parameter specifies the command to start JDTLS.
+				-- Mason typically installs JDTLS in ~/.local/share/nvim/mason/bin/
+				cmd = {
+					vim.fn.expand("$HOME/.local/share/nvim/mason/bin/jdtls"),
+				},
+				-- This is CRUCIAL for Eclipse projects.
+				-- JDTLS will look for any of these files to identify the project root.
+				-- '.project' is the key for Eclipse projects.
+				root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew", ".project" }),
+				-- JDTLS requires a dedicated workspace directory for each project.
+				-- It stores project metadata, build output, and other internal data here.
+				-- This dynamically creates a unique workspace for each project based on its name.
+				-- Make sure to adjust the `workspace_root` path to a suitable location on your system.
+				workspace_folder = function(root_dir)
+					local project_name = vim.fn.fnamemodify(root_dir, ":p:h:t")
+					local workspace_root = vim.fn.expand("$HOME/.cache/nvim/jdtls-workspaces") -- Example path for Linux/macOS
+					if not vim.loop.fs_stat(workspace_root) then
+						vim.fn.mkdir(workspace_root, "p")
+					end
+					return workspace_root .. "/" .. project_name
+				end,
+				settings = {
+					java = {
+						configuration = {
+							runtimes = {
+								-- Define your JDK paths here if your projects use specific Java versions.
+								-- JDTLS will pick the 'default' runtime for new projects.
+								{
+									name = "JavaSE-17",
+									path = "/usr/lib/jvm/java-17-openjdk", -- Adjust to your JDK 17 path
+									default = true,
+								},
+								{
+									name = "JavaSE-11",
+									path = "/usr/lib/jvm/java-11-openjdk", -- Adjust to your JDK 11 path
+								},
+								-- Add more runtimes as needed for different projects
+							},
+						},
+					},
+				},
+				init_options = {
+					-- If you use Lombok in your Eclipse projects, you need to point JDTLS to the lombok.jar.
+					-- Mason usually installs lombok.jar in the same directory as jdtls.
+					-- Verify the exact path for your Mason installation.
+					["-javaagent"] = vim.fn.expand("$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"),
+					-- You can add more init_options here if needed for specific JDTLS features.
+					-- For example, for advanced debugging or other extensions.
+				},
+				-- Pass capabilities to JDTLS (inherited from the main capabilities variable)
+				capabilities = capabilities,
+				-- The `on_attach` function is already handled by the global `LspAttach` autocommand.
+				-- You can add JDTLS-specific `on_attach` logic here if it's not generic LSP behavior.
+				-- For example, specific keymaps for JDTLS commands like organize imports.
+				on_attach = function(client, bufnr)
+					-- Call the existing global LspAttach handler
+					vim.api.nvim_exec_autocmds("LspAttach", {
+						buffer = bufnr,
+						data = { client_id = client.id },
+					})
+					-- Add JDTLS specific keymaps that are not in the generic LspAttach
+					local map = function(keys, func, desc, mode)
+						mode = mode or "n"
+						vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = "JDTLS: " .. desc })
+					end
+					map("<leader>oi", require("jdtls").organize_imports, "[O]rganize [I]mports")
+					map("<leader>ev", require("jdtls").extract_variable, "[E]xtract [V]ariable")
+					map(
+						"v",
+						"<leader>em",
+						[[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
+						"[E]xtract [M]ethod"
+					)
+				end,
+			},
 		}
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
+			"jdtls",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
