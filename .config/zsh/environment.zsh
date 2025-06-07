@@ -9,3 +9,4 @@ export SYSTEMD_EDITOR=nvim
 export OLLAMA_HOST=0.0.0.0
 export SSH_AGENT_PID=""
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+export GNUPGHOME="$HOME/.config/gnupg"
