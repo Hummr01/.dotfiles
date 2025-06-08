@@ -1,0 +1,49 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": ["tray", "network", "pulseaudio", "battery", "clock"],
+
+  "hyprland/workspaces": {
+    "name" :"workspaces",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",        // Terminal
+      "3": "",        // Browser
+      "9": "",        // KeePass
+    },
+    "on-click": "activate"
+  },
+
+  "clock": {
+    "format": "{:%a %b %d  %H:%M}"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " Ethernet",
+    "format-disconnected": " Disconnected"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-icons": {
+      "muted": "",
+      "low": "",
+      "medium": "",
+      "high": ""
+    }
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  }
+}
+
