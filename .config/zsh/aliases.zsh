@@ -16,7 +16,7 @@ alias zedit=" $EDITOR $ZSH_CONFIG/.zshrc; source $ZDOTDIR/.zshrc"
 alias viedit=" $EDITOR $HOME/.vim/vimrc"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-alias ls="eza --icons -a --git-ignore"
+alias ls="eza --icons --git-ignore"
 alias la="eza --icons -a"
 
 # Handy change dir shortcuts
