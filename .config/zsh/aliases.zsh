@@ -1,6 +1,4 @@
 export EDITOR="nvim"
-alias vi="nvim"
-alias vim="nvim"
 alias aedit="$EDITOR $ZSH_CONFIG/aliases.zsh; source $ZSH_CONFIG/aliases.zsh"
 alias fedit="$EDITOR $ZSH_CONFIG/functions.zsh; source $ZSH_CONFIG/functions.zsh"
 alias pedit=" $EDITOR $ZSH_CONFIG/private.zsh; source $ZSH_CONFIG/private.zsh"
@@ -15,6 +13,8 @@ alias pedit=" $EDITOR $ZSH_CONFIG/private.zsh; source $ZDOTDIR/private.zsh"
 alias zedit=" $EDITOR $ZSH_CONFIG/.zshrc; source $ZDOTDIR/.zshrc"
 alias viedit=" $EDITOR $HOME/.vim/vimrc"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias sudo="nocorrect sudo -E "
 
 alias ls="eza --icons --git-ignore"
 alias la="eza --icons -a"
