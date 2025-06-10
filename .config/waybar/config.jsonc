@@ -37,8 +37,9 @@
       "muted": "",
       "low": "",
       "medium": "",
-      "high": ""
-    }
+      "high": "",
+    },
+      "on-click" : "eww open --toggle audio_widget",
   },
 
   "tray": {
