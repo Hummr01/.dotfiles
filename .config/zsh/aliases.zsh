@@ -39,3 +39,7 @@ alias ga='git add'
 
 #Connect vpn
 alias vpn="$HOME/Scripts/vpn-connect.sh"
+
+#Open Project in Zellij session
+alias s='sh $HOME/Scripts/find_and_start_zellij.sh'
+alias f='sh $HOME/Scripts/attach_existing_zellij.sh'
