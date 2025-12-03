@@ -29,7 +29,6 @@ chezmoi apply
 .
 
 ### 🔄 Updating Configurations
-If you make changes to your dotfiles locally (in your ~/.config/ directory) or if you want to pull updates from this repository, use the following commands.
 
 #### 1. Pulling Updates from GitHub
 If you've updated your configs on another machine and pushed them to GitHub:
