@@ -15,7 +15,7 @@ You must have **chezmoi** installed on the system.
 sudo pacman -S chezmoi
 ```
 #### Initialization Command
-Execute the following command, replacing hummr/dotfiles with the path to this repository.
+Execute the following command, replacing hummr01/dotfiles with the path to this repository.
 ```bash
 # 1. Initialize and clone the repo into the chezmoi source directory
 chezmoi init hummr/.dotfiles
