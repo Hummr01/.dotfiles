@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# This script runs the Arch package installation command.
+# It uses 'run_onchange_' so it only runs when the package list changes.
+
+# We only want this script to run on Arch Linux
+{{ if eq .chezmoi.os "linux" -}}
+
+    # The pacman -S --needed command installs packages, but only if they are not already installed.
+    # We use the template `range` function to iterate over the list in packages.yaml.tmpl
+    sudo pacman -Syu --noconfirm --needed \
+        {{ range .packages -}}
+        {{ . }} \
+        {{ end -}}
+
+{{ end -}}
