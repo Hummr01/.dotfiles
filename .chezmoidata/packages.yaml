@@ -12,6 +12,7 @@ packages:
   - libfido2
   - hyprlock
   - waybar
-  - steam
-  - discord
-
+  - luarocks
+  - python3
+  - cliphist
+  - swaync
