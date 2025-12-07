@@ -4,13 +4,14 @@ before_sleep_cmd = loginctl lock-session
 after_sleep_cmd = hyprctl dispatch dpms on
 }
 
+{{if eq .chezmoi.hostname "archbtw"}}
 listener {
     timeout = 150                                # 2.5min.
     on-timeout = brightnessctl -s set 10         # set monitor backlight to minimum, avoid 0 on OLED monitor.
     on-resume = brightnessctl -r                 # monitor backlight restore.
 }
+{{end}}
 
-{{if eq .chezmoi.hostname "archbtw"}}
 # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
 listener { 
     timeout = 150                                          # 2.5min.
@@ -19,7 +20,6 @@ listener {
     # Use the correct -b flag to turn the backlight ON/MAX
     on-resume = exec razer-cli -b 100
 }
-{{end}}
 
 listener {
     timeout =  300                                # 5min
