@@ -17,4 +17,6 @@ packages:
   - cliphist
   - swaync
   - hypridle
-  -latex
+  - latex
+  - zathura
+  - zathura-pdf-mupdf
