@@ -597,6 +597,7 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
+				hyprls = {},
 				-- clangd = {},
 				-- gopls = {},
 				-- pyright = {},
@@ -882,6 +883,7 @@ require("lazy").setup({
 				"html",
 				"lua",
 				"luadoc",
+				"hyprlang",
 				"markdown",
 				"markdown_inline",
 				"query",
@@ -906,6 +908,9 @@ require("lazy").setup({
 		--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 		--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 	},
+	vim.filetype.add({
+		pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+	}),
 
 	-- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
 	-- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -954,6 +959,5 @@ require("lazy").setup({
 		},
 	},
 })
-
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
