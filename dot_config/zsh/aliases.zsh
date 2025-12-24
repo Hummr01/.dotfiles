@@ -36,9 +36,7 @@ alias ssh='kitten ssh'
 alias gb='git branch'
 alias gc='git commit'
 alias ga='git add'
-
-#Connect vpn
-alias vpn="$HOME/Scripts/vpn-connect.sh"
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 #Open Project in Zellij session
 alias s='sh $HOME/Scripts/find_and_start_zellij.sh'
