@@ -43,9 +43,14 @@
   },
 
   "network": {
-    "format-wifi": " {essid}",
+ "format-wifi": " {essid}",
     "format-ethernet": " Ethernet",
-    "format-disconnected": " Disconnected"
+    "format-disconnected": " Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "SSID: {essid}\n⇣ Speed: {bandwidthDownBits} \n⇡ Speed: {bandwidthUpBits}",
+    "tooltip-format-ethernet": "Interface: {ifname}\n⇣ Speed: {bandwidthDownBits} \n⇡ Speed: {bandwidthUpBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2
   },
 
   "pulseaudio": {
