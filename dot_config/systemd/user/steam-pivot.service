@@ -1,0 +1,11 @@
+[Unit]
+Description=Pivot Steam Shared Compatdata
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/fix_steam_share.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical-session.target
