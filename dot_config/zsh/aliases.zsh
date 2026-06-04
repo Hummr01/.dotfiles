@@ -41,3 +41,6 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 #Open Project in Zellij session
 alias s='sh $HOME/Scripts/find_and_start_zellij.sh'
 alias f='sh $HOME/Scripts/attach_existing_zellij.sh'
+
+# Wget History
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
