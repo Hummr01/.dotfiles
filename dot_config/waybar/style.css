@@ -5,7 +5,6 @@
   padding: 0 6px;
 }
 
-
 window#waybar {
   background-color: #1e1e2e;
   color: #cdd6f4;
@@ -22,8 +21,7 @@ window#waybar {
   color: #1e1e2e;
 }
 
-
-#tray, #network, #pulseaudio, #battery, #clock {
+#tray, #network, #pulseaudio, #battery, #clock, #idle_inhibitor {
   margin: 0 6px;
 }
 
@@ -43,5 +41,3 @@ window#waybar {
 #battery.critical {
   color: #f38ba8;
 }
-
-
