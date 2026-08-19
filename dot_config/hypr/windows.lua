@@ -11,18 +11,14 @@ hl.window_rule({ match = { class = "brave-browser" }, workspace = "3 silent" })
 
 -- Specialized Application Layout Hooks
 hl.window_rule({
-    name = "move-Steam",
-    match = {
-        class = "steam",
-        title = "Steam Big Picture Mode"
-    },
-    monitor = "0"
+	name = "move-Steam",
+	match = {
+		class = "steam",
+		title = "Steam Big Picture Mode",
+	},
+	monitor = "0",
 })
 
-hl.window_rule({
-    name = "move-KeepassXC-Popup",
-    match = {
-        initial_class = "org.keepassxc.KeePassXC"
-    },
-    center = true
-})
+hl.workspace_rule({ workspace = "1", monitor = "DP-2", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-1" })
