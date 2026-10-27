@@ -66,4 +66,9 @@ alias ga='git add'
 if [[ -d "$HOME/Scripts" ]]; then
     alias s='sh $HOME/Scripts/find_and_start_zellij.sh'
     alias f='sh $HOME/Scripts/attach_existing_zellij.sh'
+    alias dev='$HOME/Scripts/zellij_project.sh start'
+    alias dev-web='$HOME/Scripts/zellij_project.sh start web'
+    alias dev-py='$HOME/Scripts/zellij_project.sh start python'
+    alias dev-tex='$HOME/Scripts/zellij_project.sh start latex'
+    alias newproj='$HOME/Scripts/zellij_project.sh new'
 fi

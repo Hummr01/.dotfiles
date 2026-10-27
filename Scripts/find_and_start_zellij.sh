@@ -104,11 +104,5 @@ echo "Attempting to attach/create Zellij session: $SESSION_NAME"
 # Change to the selected directory before launching Zellij
 cd "$SELECTED_DIR" || { echo "Failed to change directory to $SELECTED_DIR"; exit 1; }
 
-# Attach to an existing Zellij session or create a new one
-if zellij list-sessions | grep -q "$SESSION_NAME"; then
-    echo "Session '$SESSION_NAME' already exists. Attaching..."
-    zellij attach "$SESSION_NAME"
-else
-    echo "Session '$SESSION_NAME' does not exist. Creating new session..."
-    zellij attach --create "$SESSION_NAME"
-fi
+# Delegate session creation/attachment + smart layout detection to zellij_project.sh
+exec "$HOME/Scripts/zellij_project.sh" start "$SELECTED_DIR"

@@ -1,0 +1,31 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="status-bar"
+        }
+    }
+
+    tab name="Web & AI" focus=true hide_floating_panes=true {
+        pane split_direction="vertical" {
+            pane name="Neovim" size="68%" focus=true command="nvim"
+            pane name="OpenCode AI" size="32%" command="opencode"
+        }
+        floating_panes {
+            pane name="npm run dev (Alt+f)" x="10%" y="8%" width="80%" height="55%" command="zsh" {
+                args "-ic" "if [ -f package.json ]; then echo '🚀 Starting dev server (Ctrl+C to stop, shell stays open)...'; npm run dev; fi; exec zsh"
+            }
+            pane name="Dev Shell" x="10%" y="65%" width="80%" height="27%"
+        }
+    }
+
+    tab name="Git & Shell" {
+        pane split_direction="vertical" {
+            pane name="LazyGit" size="60%" command="lazygit"
+            pane name="Terminal" size="40%"
+        }
+    }
+}

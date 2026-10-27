@@ -1,0 +1,12 @@
+[Unit]
+Description=Close SSH ControlMaster connections on YubiKey unplug or screen lock
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/Scripts/yubikey-ssh-guard.sh
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=default.target

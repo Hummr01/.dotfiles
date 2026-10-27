@@ -3,7 +3,7 @@
 -- ==========================================
 
 -- Global Window Rules
-hl.window_rule({ match = { class = "kitty" }, opacity = "0.9" })
+hl.window_rule({ match = { class = "kitty" }, opacity = "0.9", fullscreen_state = "0 0" })
 hl.window_rule({ match = { class = "org.keepassxc.KeePassXC" }, workspace = "9 silent" })
 hl.window_rule({ match = { class = "steam", title = "Steam" }, workspace = "8 silent" })
 hl.window_rule({ match = { class = "discord" }, workspace = "2 silent" })

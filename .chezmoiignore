@@ -1,3 +1,4 @@
 README.*
 *history
 .config/systemd/user/*.wants/
+.ssh/config.local

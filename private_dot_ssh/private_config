@@ -1,0 +1,13 @@
+Include ~/.ssh/config.local
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_sk_rk
+    IdentitiesOnly yes
+    ControlMaster auto
+    ControlPath ${XDG_RUNTIME_DIR}/ssh-cm-%r@%h:%p
+    ControlPersist yes
+
+Host *
+    AddKeysToAgent yes
