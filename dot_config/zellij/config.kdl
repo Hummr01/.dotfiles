@@ -1,5 +1,5 @@
 // Zellij Configuration — Optimized for Non-Overlapping Neovim + OpenCode AI Workflow
-// Previous config backed up at /home/hummr/.config/zellij/config.kdl.bak
+// Previous config backed up at ~/.config/zellij/config.kdl.bak
 
 keybinds clear-defaults=true {
     locked {
