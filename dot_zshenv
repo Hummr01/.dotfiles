@@ -1,15 +1,21 @@
 export ZDOTDIR="$HOME/.config/zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 export ZSH_CONFIG="$XDG_CONFIG_HOME/zsh"
 export ZSH_CACHE="$XDG_CACHE_HOME/zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
-export ZSH_CACHE="$XDG_CACHE_HOME/zsh"
 export STARSHIP_CONFIG="$ZSH_CONFIG/starship/starship.toml"
 export SYSTEMD_EDITOR=nvim
+export OLLAMA_HOST=0.0.0.0
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
-export SSH_ASKPASS="/usr/bin/ksshaskpass"
-export SSH_ASKPASS_REQUIRE="prefer"
+if [[ -x /usr/bin/ksshaskpass ]]; then
+  export SSH_ASKPASS="/usr/bin/ksshaskpass"
+  export SSH_ASKPASS_REQUIRE="prefer"
+else
+  unset SSH_ASKPASS SSH_ASKPASS_REQUIRE
+fi
 export GNUPGHOME="$HOME/.config/gnupg"
 
 export CARGO_HOME="$XDG_DATA_HOME/cargo"

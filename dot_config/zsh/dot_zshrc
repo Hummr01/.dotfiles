@@ -3,12 +3,17 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
+
+autoload -Uz compinit && compinit
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 typeset -ga sources
 source "$ZSH_CONFIG/aliases.zsh"
-source "$ZSH_CONFIG/keybinds.zsh"
 
 source "$ZSH_CONFIG/zsh-antidote/antidote.zsh"
 antidote load
+
+source "$ZSH_CONFIG/keybinds.zsh"
 
 eval "$(starship init zsh)"
 

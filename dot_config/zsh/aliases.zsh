@@ -71,4 +71,25 @@ if [[ -d "$HOME/Scripts" ]]; then
     alias dev-py='$HOME/Scripts/zellij_project.sh start python'
     alias dev-tex='$HOME/Scripts/zellij_project.sh start latex'
     alias newproj='$HOME/Scripts/zellij_project.sh new'
+
+    if (( $+functions[compdef] )); then
+        _zellij_project() {
+            case "${words[2]}" in
+                new)
+                    if (( CURRENT == 3 )); then
+                        compadd web python latex arduino empty
+                    fi
+                    ;;
+                start)
+                    if (( CURRENT == 3 )); then
+                        compadd web python latex ai-dev
+                        _files -/
+                    elif (( CURRENT == 4 )); then
+                        _files -/
+                    fi
+                    ;;
+            esac
+        }
+        compdef _zellij_project zellij_project.sh "$HOME/Scripts/zellij_project.sh"
+    fi
 fi

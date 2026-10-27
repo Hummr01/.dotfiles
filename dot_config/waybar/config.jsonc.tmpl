@@ -13,7 +13,7 @@
     "custom/tailscale", // Added foundation for your VPN
     "pulseaudio",
     "pulseaudio#microphone",
-    {{ if .has_battery }}"battery",{{ end }}
+    {{ if index . "has_battery" }}"battery",{{ end }}
     "tray"
   ],
 
@@ -40,7 +40,7 @@
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
 
-  {{ if .has_battery }}
+  {{ if index . "has_battery" }}
   "battery": {
     "tooltip": true,
     "tooltip-format": "Time left: {time}",
